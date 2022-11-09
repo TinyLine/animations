@@ -1,0 +1,67 @@
+.button {
+position: relative;
+
+    display: block;
+    margin: 20px;
+    padding: 6px 22px;
+    background: #3f8f17b5;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.62;
+    text-align: center;
+    border: transparent;
+    border-radius: 4px;
+    cursor: pointer;
+
+    overflow: hidden;
+
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    /* transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1); */
+}
+
+.button::before{
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 20px;
+
+    background-image: url(../images/icons8-пингвин-48.png);
+    background-size: contain;
+
+    /* background-color: red; */
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    
+}
+
+.button:hover::before{
+transform: translateY(-28px);
+}
+
+.button::after{
+position: absolute;
+
+top: 50%;
+left: 22px;
+content: "";
+display: inline-block;
+width: 20px;
+height: 20px;
+/* background-color: blue; */
+
+background-image: url(../images/icons8-попугай-48.png);
+background-size: contain;
+
+transform: translateY(calc(-70% + 35px));
+transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.button:hover::after{
+transform: translateY(-70%)
+}
+
+.button:hover,
+.button:focus {
+    background-color: rgb(232, 137, 128);
+}
